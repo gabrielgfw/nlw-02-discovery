@@ -31,36 +31,37 @@
     font-size: 60%;
 }
 
-
-body {
-    background-color: var(--color-primary-darker);
-    font-size: 100%;
-}
-
-/* * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-} */
-
-#container {
-    /* border box config */
-    border: 1px solid red;
-    
-    /* padding is the space between the inner content and the box border */
-    /* clockwise sequence (top) (right) (bottom) (left) */
-    /* 10px(top) 40px(right) 100px(bottom); */
-    padding-top: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 100px;
-
-    /* margin between the box and the outer box(body) */
-    margin: 40px 10px;
-
-    /* box size */
-    width: 300px;
-    height: 300px;
 }
 
+html, body {
+    /* 100% vh = view height = actual size of user's client */
+    height: 100vh;
+}
 
+body {
+    background: var(--color-background);
+    /* makes every element inside the box flexible */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body,
+input,
+button,
+textarea {
+    /* font-weight: 500;
+       font-family: Poppins;
+       font-size: 1.6rem; */
+    font: 500 1.6rem Poppins;
+    color: var(--color-text-base);
+}
+
+#container {
+    width: 90vw;
+    max-width: 700px;
+}
