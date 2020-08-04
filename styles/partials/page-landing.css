@@ -16,6 +16,14 @@
 
 .logo-container {
     text-align: center;
+    margin-bottom: 3.2rem;
+}
+
+.logo-contaier h2 {
+    font-weight: 500;
+    font-size: 3.6rem;
+    line-height: 4.6rem;
+    margin-top: 0.8rem;
 }
 
 /* using 100% of div 'container' viewport size */
