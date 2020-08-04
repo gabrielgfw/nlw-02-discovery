@@ -40,6 +40,8 @@
     margin: 3.2rem auto;
 
     position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .page-header .header-content strong {
@@ -74,12 +76,14 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    transition: background 0.4s;
+    transition: background 0.6s,
+                font-size 0.8s;
     margin-top: 3.2rem;
 }
 
 #search-teachers button:hover {
     background: var(--color-secondary-dark);
+    font-size: 2rem;
 }
 
 
@@ -141,6 +145,14 @@
     padding: 3.2rem;
     display: flex;
     align-items: center;
+}
+
+.teacher-item header strong {
+    transition: color 1.5s;
+}
+
+.teacher-item header strong:hover {
+    color: var(--color-primary);
 }
 
 .teacher-item header img {
@@ -213,12 +225,14 @@
 
     text-decoration: none;
 
-    transition: background 0.6s;
+    transition: background 0.8s,
+                font-size 0.6s;
     margin-left: 1.6rem;
 }
 
 .teacher-item footer button:hover {
     background: var(--color-secondary-dark);
+    font-size: 1.7rem;
 }
 
 /* desktop configuration */
@@ -242,6 +256,8 @@
 
         flex: 1 1;
         padding-bottom: 48px;
+        padding-left: 16px;
+        padding-right: 16px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -249,7 +265,7 @@
     }
 
     .page-header .header-content strong {
-        max-width: 350px;
+        max-width: 550px;
     }
 
     .teacher-item header,
@@ -263,6 +279,7 @@
         gap: 16px;
         position: absolute;
         bottom: -28px;
+        padding-right: 16px;
     }
 
     #page-study main {
