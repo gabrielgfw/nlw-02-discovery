@@ -10,6 +10,7 @@
     color: var(--color-text-in-primary);
 }
 
+
 .logo-container img {
     height: 10rem;
 }
@@ -31,3 +32,65 @@
     width: 100%;
 }
 
+
+.buttons-container {
+    /* add flex to center all buttons using justify-content */ 
+    display: flex;
+    justify-content: center;
+    margin: 3.2rem 0;
+}
+
+.buttons-container a {
+    width: 30rem;
+    height: 10.4rem;
+    
+    /* makes borders rounded */ 
+    border-radius: 0.8rem;
+    margin-right: 1.6rem;
+    font: 700 2.4rem Archivo;
+
+    /* align configuration */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* removing the underline from the button's text */
+    text-decoration: none;
+    color: var(--color-button-text);
+
+    /* every time the background suffer any change */
+    /* the given property is going to be applied */
+    transition: background 0.6s,
+                font-size 0.8s;
+
+}
+
+/* config all img inside the btn-container to be resized */
+/* in this case, we are going to change the button's icons img */
+.buttons-container a img {
+    width: 4rem;
+    margin-right: 2.4rem;
+}
+
+/* config the background color of the 'study' button */
+.buttons-container a.study {
+    background: var(--color-primary-lighter);
+}
+
+/* config when the mouse is upon the study's button */
+.buttons-container a.study:hover {
+    background: var(--color-primary-light);
+    font-size: 2.8rem;
+}
+
+/* config the background color of the 'give classes' button */
+.buttons-container a.give-classes {
+    background: var(--color-secondary);
+    /* this only fix the center align between both buttons */
+    margin-right: 0;
+}
+
+.buttons-container a.give-classes:hover {
+    background: var(--color-secondary-dark);
+    font-size: 2.8rem;
+}
