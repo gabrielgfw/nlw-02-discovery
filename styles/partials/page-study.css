@@ -59,11 +59,12 @@
 }
 
 .teacher-item header strong {
-    transition: color 1.5s;
+    transition: 1.5s;                
 }
 
 .teacher-item header strong:hover {
     color: var(--color-primary);
+    transform: translateY(-5px);
 }
 
 .teacher-item header img {
