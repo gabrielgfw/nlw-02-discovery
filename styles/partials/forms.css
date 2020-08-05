@@ -35,8 +35,7 @@
 /* Note that '::after', is an pseudo element created by css */
 /* this will only happens, in this particular case, when the */
 /* input is focused */
-.input-block:focus-within::after,
-.textarea-block:focus-within::after {
+.input-block:focus-within::after {
     content: "";
 
     /* taking 100% of the current element size subtracting 3.2rem */
@@ -48,4 +47,19 @@
     left: 1.6rem;
     right: 1.6rem;
     bottom: 0;
+}
+
+
+.textarea-block:focus-within::after {
+    content: "";
+
+    /* taking 100% of the current element size subtracting 3.2rem */
+    width: calc(100% - 3.2rem);
+    height: 2px;
+    background: var(--color-secondary-dark);
+
+    position: absolute;
+    left: 1.6rem;
+    right: 1.6rem;
+    bottom: 8px;
 }
