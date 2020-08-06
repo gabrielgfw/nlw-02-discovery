@@ -2,7 +2,13 @@
 const express = require('express');
 /* const var to server expressions use */
 const server = express();
-/* every '.use()' function its a server config settings */
+/* nunjucks configuration */
+const nunjucks = require('nunjucks');
+nunjucks.configure('src/views', {
+    express: server,
+    noCache: true
+})
+
 
 const proffys = [
     { 
@@ -29,24 +35,25 @@ const proffys = [
     }
 ]
 
-/* ROUTES CONFIG */
+
 /* setting the route 'get', to return the second parameter */
 /* 'req' is basically the info you are sending to the endpoint */ 
 /* 'res' is the return of this endpoint */
-/* '__dirname' is a node var which return the root path */
 
 function pageLanding(req, res) {
-    return res.sendFile(__dirname + "/views/index.html")
+    return res.render("index.html")
 }
 function pageStudy(req, res) {
-    return res.sendFile(__dirname + "/views/study.html")
+    return res.render("study.html")
 }
 function pageGiveClasses(req, res) {
-    return res.sendFile(__dirname + "/views/give-classes.html")
+    return res.render("give-classes.html")
 }
 
-/* config the static files for the server */
+/* every '.use()' function its a server config settings */
+/* config the static files for the server (css, scripts, img) */
 server.use(express.static("public"))
+/* ROUTES CONFIG */
 /* INDEX Page */
 .get("/", pageLanding)
 /* STUDY Page */
