@@ -23,6 +23,23 @@
     margin-top: 0.8rem;
 }
 
+.logo-container img {
+    animation: logo-waving 4s ease-in-out infinite;
+}
+
+/* Wave Animation logo */ 
+@keyframes logo-waving {
+    0% {
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
 /* using 100% of div 'container' viewport size */
 .hero-image {
     width: 100%;
@@ -57,8 +74,7 @@
     /* every time the background suffer any change */
     /* the given property is going to be applied */
     transition: background 0.6s,
-                font-size 0.8s;
-
+                font-size 2s;
 }
 
 /* config all img inside the btn-container to be resized */
@@ -105,6 +121,7 @@
     margin-left: 0.8rem;
 }
 
+
 @media (max-width: 699px) {
     :root {
         font-size: 40%;
@@ -149,11 +166,6 @@
 
     .logo-container img {
         height: 127px;
-        transition: 5s;
-    }
-
-    .logo-container img:hover {
-        transform: translateY(-10px);
     }
 
     .hero-image {

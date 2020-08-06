@@ -55,6 +55,12 @@
     margin-top: 6.4rem;
 }
 
+/* fix height out of control at bio textarea. */
+#page-give-classes fieldset #bio {
+    min-height: 80px;
+    max-height: 140px;
+}
+
 
 #page-give-classes .input-block+.input-block,
 #page-give-classes .input-block+.textarea-block,
@@ -127,11 +133,6 @@
 
     #page-give-classes main fieldset {
         padding: 0 64px;
-    }
-
-    #page-give-classes #container #create-class fieldset #bio {
-        min-height: 80px;
-        max-height: 140px;
     }
 
     .schedule-item {
