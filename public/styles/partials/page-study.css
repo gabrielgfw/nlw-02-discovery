@@ -120,7 +120,7 @@
     display: block;
 }
 
-.teacher-item footer button {
+.teacher-item footer .button {
     width: 20rem;
     height: 5.6rem;
     background: var(--color-secondary);
@@ -142,12 +142,12 @@
     margin-left: 1.6rem;
 }
 
-.teacher-item footer button:hover {
+.teacher-item footer .button:hover {
     background: var(--color-secondary-dark);
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
 
-.teacher-item footer button:focus {
+.teacher-item footer .button:focus {
     outline: none;
     border: 0;
 }
