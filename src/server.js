@@ -51,6 +51,16 @@ const subjects = [
     "Química",
 ];
 
+const weekdays = [
+    "Domingo",
+    "Segunda-feira",
+    "Terça-feira",
+    "Quarta-feira",
+    "Quinta-feira",
+    "Sexta-feira",
+    "Sábado"
+];
+
 /* setting the route 'get', to return the second parameter */
 /* 'req' is basically the info you are sending to the endpoint */ 
 /* 'res' is the return of this endpoint */
@@ -60,10 +70,10 @@ function pageLanding(req, res) {
 }
 function pageStudy(req, res) {
     const filters = req.query;
-    return res.render("study.html", {proffys, filters, subjects})
+    return res.render("study.html", {proffys, filters, subjects, weekdays})
 }
 function pageGiveClasses(req, res) {
-    return res.render("give-classes.html")
+    return res.render("give-classes.html", {subjects, weekdays})
 }
 
 /* every '.use()' function its a server config settings */
