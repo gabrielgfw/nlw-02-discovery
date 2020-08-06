@@ -38,6 +38,18 @@ const proffys = [
     }
 ]
 
+const subjects = [
+    "Artes",
+    "Biologia",
+    "Ciências",
+    "Educação física",
+    "Física",
+    "Geografia",
+    "História",
+    "Matemática",
+    "Portugês",
+    "Química",
+];
 
 /* setting the route 'get', to return the second parameter */
 /* 'req' is basically the info you are sending to the endpoint */ 
@@ -48,7 +60,7 @@ function pageLanding(req, res) {
 }
 function pageStudy(req, res) {
     const filters = req.query;
-    return res.render("study.html", {proffys, filters})
+    return res.render("study.html", {proffys, filters, subjects})
 }
 function pageGiveClasses(req, res) {
     return res.render("give-classes.html")
