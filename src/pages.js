@@ -14,7 +14,7 @@ function pageLanding(req, res) {
 }
 
 // Study Page config //
-function pageStudy(req, res) {
+async function pageStudy(req, res) {
     const filters = req.query;
 
     // cheking for any empty value. // 
@@ -30,15 +30,27 @@ function pageStudy(req, res) {
           FROM proffys
           JOIN classes ON (classes.proffy_id = proffys.id)
          WHERE EXISTS(
-
             SELECT class_schedule.*
               FROM class_schedule
              WHERE class_schedule.class_id = classes.id
-               AND class_schedule.weekday = ${ filters.weekdays }
-               AND class_schedule.time_from <= ${ timeToMinutes }
-               AND class_schedule.time_to > ${ timeToMinutes }
+               AND class_schedule.weekday = ${filters.weekday}
+               AND class_schedule.time_from <= ${timeToMinutes}
+               AND class_schedule.time_to > ${timeToMinutes}
          )
+           AND classes.subject = '${filters.subject}';
     `;
+
+    // In case of any error occurred during the select statement. //
+    try {
+        // Waiting for the database being connected. //
+        const db = await Database;
+        const proffys = await db.all(query);
+
+        return res.render('study.html', { proffys, subjects, filters, weekdays })
+
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 
