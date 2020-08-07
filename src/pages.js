@@ -2,7 +2,7 @@
 const Database = require('./database/db');
 
 // Importing utils format information. // 
-const { subjects, weekdays, getSubject } = require('./utils/format');
+const { subjects, weekdays, getSubject, convertHoursToMinutes } = require('./utils/format');
 
 // ROUTES INFO:
 // 'req' is basically the info you are sending to the endpoint 
@@ -23,7 +23,7 @@ function pageStudy(req, res) {
     }
 
     // convert hours to minutes. //
-    
+    const timeToMinutes = convertHoursToMinutes(filters.time);
 
     const query = `
         SELECT classes.*, proffys.*
@@ -35,8 +35,8 @@ function pageStudy(req, res) {
               FROM class_schedule
              WHERE class_schedule.class_id = classes.id
                AND class_schedule.weekday = ${ filters.weekdays }
-               AND class_schedule.time_from <= ${ filters.time }
-               AND class_schedule.time_to > ${ filters.time }
+               AND class_schedule.time_from <= ${ timeToMinutes }
+               AND class_schedule.time_to > ${ timeToMinutes }
          )
     `;
 }
