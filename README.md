@@ -14,3 +14,20 @@
 • VSCode;
 • Chrome (client/devtools).
 ```
+
+#### Instalando Dependências:
+```
+npm init -y
+npm install express
+npm install nunjucks
+npm install sqlite-async
+```
+
+#### Executando Banco de Dados (será criada a estrutura do banco de dados):
+```
+node src/database/db.js
+```
+#### Executando Aplicação (localhost:5500):
+```
+node src/server.js
+```
