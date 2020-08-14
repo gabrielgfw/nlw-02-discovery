@@ -1,8 +1,13 @@
 # Next Level Week - 2ª Edição.
-##### [NLW Page.](https://nextlevelweek.com/)
+##### [NextLevelWeek-Page.](https://nextlevelweek.com/)
 ---
  **Tecnologias e ferramentas utilizadas:**
 ```
+• Node.js;
+• Express;
+• SQLite;
+• Nunjucks;
+
 • HTML;
 • CSS;
 • Javascript;
