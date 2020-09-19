@@ -17,10 +17,7 @@
 
 #### Instalando Dependências:
 ```
-npm init -y
-npm install express
-npm install nunjucks
-npm install sqlite-async
+npm update
 ```
 
 #### Executando Banco de Dados (será criada a estrutura do banco de dados):
